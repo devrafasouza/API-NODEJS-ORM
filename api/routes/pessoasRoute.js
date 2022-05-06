@@ -6,6 +6,7 @@ const router = Router();
 router.get('/pessoas', pessoaController.pegaTodasAsPessoas);
 router.get('/pessoas/:id', pessoaController.pegaUmaPessoa);
 router.post('/pessoas/', pessoaController.criaPessoa);
+router.post('/pessoas/:id/restaura', pessoaController.restauraPessoa);
 router.put('/pessoas/:id', pessoaController.atualizaPessoa);
 router.delete('/pessoas/:id', pessoaController.removePessoa);
 router.get('/pessoas/:estudanteId/matricula/:matriculaId', pessoaController.pegaUmaMatricula);

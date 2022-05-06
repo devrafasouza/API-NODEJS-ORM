@@ -23,7 +23,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Pessoas',
-    paranoid: true
+    paranoid: true, /* propriedade para ser possivel a soft delete */
+    defaultScope: {
+      where: { ativo: true }
+    }
+
   });
   return Pessoas;
 };
