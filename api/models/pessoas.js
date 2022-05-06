@@ -26,6 +26,9 @@ module.exports = (sequelize, DataTypes) => {
     paranoid: true, /* propriedade para ser possivel a soft delete */
     defaultScope: {
       where: { ativo: true }
+    },
+    scopes: {
+      todos: { where: {} }
     }
 
   });
