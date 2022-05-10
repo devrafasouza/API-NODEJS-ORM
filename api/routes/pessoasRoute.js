@@ -1,18 +1,19 @@
 const { Router } = require('express');
-const pessoaController = require('../controllers/PessoaController.js');
+const PessoaController = require('../controllers/PessoaController.js');
 
 const router = Router();
 
-router.get('/pessoas', pessoaController.pegaPessoasAtivas);
-router.get('/pessoas/todos', pessoaController.pegaTodasAsPessoas);
-router.get('/pessoas/:id', pessoaController.pegaUmaPessoa);
-router.post('/pessoas/', pessoaController.criaPessoa);
-router.post('/pessoas/:id/restaura', pessoaController.restauraPessoa);
-router.put('/pessoas/:id', pessoaController.atualizaPessoa);
-router.delete('/pessoas/:id', pessoaController.removePessoa);
-router.get('/pessoas/:estudanteId/matricula/:matriculaId', pessoaController.pegaUmaMatricula);
-router.post('/pessoas/:estudanteId/matricula', pessoaController.criaMatricula);
-router.put('/pessoas/:estudanteId/matricula/:matriculaId', pessoaController.atualizaMatricula);
-router.delete('/pessoas/:estudanteId/matricula/:matriculaId', pessoaController.removeMatricula);
+router.get('/pessoas', PessoaController.pegaPessoasAtivas);
+router.get('/pessoas/todos', PessoaController.pegaTodasAsPessoas);
+router.get('/pessoas/:id', PessoaController.pegaUmaPessoa);
+router.get('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.pegaUmaMatricula);
+router.get('/pessoas/:estudanteId/matricula', PessoaController.pegaMatriculas);
+router.post('/pessoas/', PessoaController.criaPessoa);
+router.post('/pessoas/:id/restaura', PessoaController.restauraPessoa);
+router.post('/pessoas/:estudanteId/matricula', PessoaController.criaMatricula);
+router.put('/pessoas/:id', PessoaController.atualizaPessoa);
+router.put('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.atualizaMatricula);
+router.delete('/pessoas/:id', PessoaController.removePessoa);
+router.delete('/pessoas/:estudanteId/matricula/:matriculaId', PessoaController.removeMatricula);
 
 module.exports = router;
